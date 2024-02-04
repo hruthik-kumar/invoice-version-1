@@ -1,0 +1,164 @@
+@keyframes slide-in-left {
+  0% {
+    transform: translateX(-200px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.logoChild {
+  width: 60px;
+  border-radius: 50%;
+  background-color: var(--color-cornflowerblue);
+  height: 60px;
+}
+.logo1,
+.logoChild {
+  position: relative;
+}
+.logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: var(--padding-6xs) 0;
+  gap: var(--gap-6xs);
+}
+.dashboardIcon {
+  width: 20px;
+  position: relative;
+  height: 20px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.dashboard {
+  position: relative;
+  font-weight: 500;
+}
+.customers,
+.navBarList,
+.operationalCost {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-3xs);
+}
+.customers,
+.operationalCost {
+  cursor: pointer;
+}
+.operationalCost {
+  align-items: flex-start;
+}
+.logoParent,
+.navBarListParent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.navBarListParent {
+  justify-content: flex-start;
+  gap: var(--gap-6xl);
+  font-size: var(--font-size-mini);
+}
+.logoParent {
+  align-self: stretch;
+  justify-content: center;
+  gap: var(--gap-31xl);
+}
+.frameChild {
+  width: 50px;
+  position: relative;
+  border-radius: var(--br-3xs);
+  height: 50px;
+  object-fit: cover;
+}
+.freeAccount,
+.sriDurgaEngineering {
+  margin: 0;
+  align-self: stretch;
+  position: relative;
+  font-weight: 500;
+  font-family: inherit;
+}
+.sriDurgaEngineering {
+  font-size: inherit;
+}
+.freeAccount {
+  font-size: var(--font-size-3xs);
+  color: var(--color-dimgray);
+}
+.name {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.fill1Icon,
+.fill4Icon {
+  position: absolute;
+  height: 100%;
+  width: 67.63%;
+  top: 0;
+  right: 32.37%;
+  bottom: 0;
+  left: 0;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.fill4Icon {
+  height: 36.53%;
+  width: 32.95%;
+  top: 31.74%;
+  right: -0.58%;
+  bottom: 31.74%;
+  left: 67.63%;
+}
+.fill1Parent {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  width: 17.3px;
+  position: relative;
+  height: 16.7px;
+}
+.frameGroup {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-3xs);
+  font-size: var(--font-size-mini);
+}
+.frameParent {
+  text-align: left;
+  font-size: var(--font-size-11xl);
+  color: var(--color-black);
+  font-family: var(--font-inter);
+}
+.frameParent,
+.frameParent.animate,
+.frameParent:hover {
+  animation: 0.25s ease 0s 1 normal forwards slide-in-left;
+}
+.frameParent,
+.frameParent:hover {
+  background-color: var(--color-white);
+  display: flex;
+  width: 258px;
+  height: 1049px;
+  flex-direction: column;
+  gap: var(--gap-151xl);
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: var(--padding-11xl);
+  box-sizing: border-box;
+  opacity: 1;
+}

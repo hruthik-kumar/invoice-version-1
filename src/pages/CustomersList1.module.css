@@ -1,0 +1,360 @@
+.logoChild {
+  width: 60px;
+  border-radius: 50%;
+  background-color: var(--color-cornflowerblue);
+  height: 60px;
+}
+.logo1,
+.logoChild {
+  position: relative;
+}
+.logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: var(--padding-6xs) 0;
+  gap: var(--gap-6xs);
+}
+.dashboardIcon {
+  width: 20px;
+  position: relative;
+  height: 20px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.dashboard {
+  position: relative;
+  font-weight: 500;
+}
+.navBarList {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-3xs);
+  cursor: pointer;
+}
+.customers {
+  align-items: center;
+  color: var(--color-cornflowerblue);
+}
+.customers,
+.navBarListParent,
+.operationalCost,
+.quotation {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: var(--gap-3xs);
+}
+.operationalCost {
+  align-items: flex-start;
+  cursor: pointer;
+}
+.navBarListParent,
+.quotation {
+  align-items: center;
+}
+.navBarListParent {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gap-6xl);
+  font-size: var(--font-size-mini);
+}
+.logoParent,
+.logoParent:hover {
+  display: flex;
+  align-self: stretch;
+  width: auto;
+  height: auto;
+  flex-direction: column;
+  gap: var(--gap-31xl);
+  align-items: flex-start;
+  justify-content: center;
+}
+.frameChild {
+  width: 50px;
+  position: relative;
+  border-radius: var(--br-3xs);
+  background-color: var(--color-darkgray-200);
+  height: 50px;
+}
+.freeAccount {
+  position: relative;
+  font-size: var(--font-size-3xs);
+  font-weight: 500;
+  color: var(--color-dimgray);
+}
+.name {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.fill1Icon,
+.fill4Icon {
+  position: absolute;
+  height: 100%;
+  width: 67.63%;
+  top: 0;
+  right: 32.37%;
+  bottom: 0;
+  left: 0;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.fill4Icon {
+  height: 36.53%;
+  width: 32.95%;
+  top: 31.74%;
+  right: -0.58%;
+  bottom: 31.74%;
+  left: 67.63%;
+}
+.fill1Parent {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  width: 17.3px;
+  position: relative;
+  height: 16.7px;
+}
+.frameGroup,
+.frameParent {
+  align-self: stretch;
+  display: flex;
+}
+.frameGroup,
+.frameGroup:hover {
+  width: auto;
+  height: auto;
+  flex-direction: row;
+  gap: var(--gap-3xs);
+  align-items: center;
+  justify-content: center;
+}
+.frameGroup {
+  font-size: var(--font-size-mini);
+}
+.frameGroup:hover {
+  display: flex;
+  align-self: stretch;
+}
+.frameParent {
+  width: 258px;
+  background-color: var(--color-white);
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: var(--padding-11xl) var(--padding-21xl);
+  box-sizing: border-box;
+}
+.search,
+.search1,
+.searchBar {
+  font-family: var(--font-inter);
+}
+.searchBar {
+  border: 0;
+  outline: 0;
+  font-size: var(--font-size-3xs);
+  background-color: var(--color-white);
+  border-radius: var(--br-8xs);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: var(--padding-5xs) var(--padding-3xs);
+  color: var(--color-gray-100);
+}
+.search,
+.search1 {
+  position: relative;
+  font-size: var(--font-size-xl);
+  color: var(--color-white);
+  text-align: left;
+}
+.search1 {
+  font-size: var(--font-size-xs);
+}
+.addName,
+.searchBarParent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.addName {
+  cursor: pointer;
+  border: 0;
+  padding: var(--padding-10xs) var(--padding-xl);
+  background-color: var(--color-cornflowerblue);
+  border-radius: var(--br-8xs);
+  justify-content: center;
+  gap: var(--gap-3xs);
+}
+.searchBarParent {
+  position: absolute;
+  top: 0;
+  right: 0;
+  justify-content: flex-start;
+  gap: var(--gap-51xl);
+}
+.vectorIcon {
+  position: absolute;
+  height: 62.5%;
+  width: 100%;
+  top: 18.93%;
+  right: 0;
+  bottom: 18.57%;
+  left: 0;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.pajamashamburger {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.pajamashamburger,
+.pajamashamburger:hover {
+  display: flex;
+  width: 26px;
+  height: 28px;
+  gap: var(--gap-0);
+}
+.customerList {
+  margin: 0;
+  position: relative;
+  font-size: inherit;
+  font-weight: 700;
+  font-family: inherit;
+}
+.pajamashamburgerParent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-3xs);
+}
+.frameContainer {
+  align-self: stretch;
+  position: relative;
+  height: 30px;
+  flex-shrink: 0;
+}
+.companyName {
+  position: relative;
+  font-size: var(--font-size-sm);
+  font-family: var(--font-inter);
+  color: var(--color-black);
+  text-align: left;
+}
+.td {
+  padding-right: var(--padding-xl);
+}
+.td,
+.td5 {
+  position: relative;
+  padding-bottom: var(--padding-xl);
+}
+.deleteEntry1,
+.editEntry1 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: relative;
+  font-size: var(--font-size-sm);
+  text-decoration: underline;
+  font-family: var(--font-inter);
+  color: var(--color-lightseagreen);
+  text-align: left;
+  display: inline-block;
+}
+.deleteEntry1 {
+  color: var(--color-red);
+}
+.td78 {
+  position: relative;
+  padding-right: var(--padding-xl);
+}
+.recentInvoicesSection {
+  align-self: stretch;
+  border-radius: var(--br-3xs);
+  background-color: var(--color-white);
+  overflow: hidden;
+  flex-shrink: 0;
+  padding: var(--padding-xl);
+}
+.dashboard1 {
+  flex: 1;
+  overflow-y: auto;
+  flex-direction: column;
+  padding: var(--padding-11xl) var(--padding-11xl) var(--padding-11xl) 0;
+  box-sizing: border-box;
+  gap: var(--gap-21xl);
+  height: auto;
+  font-size: var(--font-size-6xl);
+}
+.customersList,
+.dashboard1,
+.dashboard1:hover {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.dashboard1:hover {
+  flex: 1;
+  height: auto;
+  flex-direction: column;
+  gap: var(--gap-21xl);
+  padding: var(--padding-11xl) var(--padding-11xl) var(--padding-11xl) 0;
+  box-sizing: border-box;
+}
+.customersList {
+  width: 100%;
+  position: relative;
+  background-color: var(--color-whitesmoke-100);
+  height: 1024px;
+  overflow: hidden;
+  flex-direction: row;
+  gap: var(--gap-xl);
+  text-align: left;
+  font-size: var(--font-size-11xl);
+  color: var(--color-black);
+  font-family: var(--font-inter);
+}
+@media screen and (max-width: 1440px) {
+  .pajamashamburger {
+    display: none;
+  }
+}
+@media screen and (max-width: 1170px) {
+  .logoParent {
+    display: flex;
+  }
+  .frameParent {
+    display: none;
+  }
+  .pajamashamburger,
+  .pajamashamburgerParent {
+    display: flex;
+  }
+  .dashboard1 {
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-left: var(--padding-11xl);
+    box-sizing: border-box;
+  }
+}

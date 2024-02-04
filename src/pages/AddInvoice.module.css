@@ -1,0 +1,627 @@
+.logoChild {
+  width: 60px;
+  position: relative;
+  border-radius: 50%;
+  background-color: var(--color-cornflowerblue);
+  height: 60px;
+}
+.logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: var(--padding-6xs) 0;
+  gap: var(--gap-6xs);
+}
+.dashboardIcon {
+  width: 20px;
+  position: relative;
+  height: 20px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.dashboard {
+  position: relative;
+  font-weight: 500;
+}
+.navBarList {
+  align-items: center;
+}
+.invoice,
+.navBarList,
+.operationalCost {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: var(--gap-3xs);
+}
+.invoice {
+  align-items: center;
+  color: var(--color-cornflowerblue);
+}
+.operationalCost {
+  align-items: flex-start;
+}
+.logoParent,
+.navBarListParent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.navBarListParent {
+  justify-content: flex-start;
+  gap: var(--gap-6xl);
+  font-size: var(--font-size-mini);
+}
+.logoParent {
+  align-self: stretch;
+  justify-content: center;
+  gap: var(--gap-31xl);
+}
+.frameChild {
+  width: 50px;
+  position: relative;
+  border-radius: var(--br-3xs);
+  background-color: var(--color-darkgray-200);
+  height: 50px;
+}
+.freeAccount {
+  position: relative;
+  font-size: var(--font-size-3xs);
+  font-weight: 500;
+  color: var(--color-dimgray);
+}
+.name {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.fill1Icon,
+.fill4Icon {
+  position: absolute;
+  height: 100%;
+  width: 67.63%;
+  top: 0;
+  right: 32.37%;
+  bottom: 0;
+  left: 0;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.fill4Icon {
+  height: 36.53%;
+  width: 32.95%;
+  top: 31.74%;
+  right: -0.58%;
+  bottom: 31.74%;
+  left: 67.63%;
+}
+.fill1Parent {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  width: 17.3px;
+  position: relative;
+  height: 16.7px;
+}
+.frameGroup,
+.frameParent {
+  align-self: stretch;
+  display: flex;
+}
+.frameGroup {
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-3xs);
+  font-size: var(--font-size-mini);
+}
+.frameParent {
+  margin: 0;
+  width: 258px;
+  background-color: var(--color-white);
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: var(--padding-11xl) var(--padding-21xl);
+  box-sizing: border-box;
+  text-align: left;
+  font-size: var(--font-size-11xl);
+  color: var(--color-black);
+  font-family: var(--font-inter);
+}
+.addInvoice1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  width: 239px;
+}
+.addInvoices {
+  align-self: stretch;
+  position: relative;
+  height: 30px;
+  flex-shrink: 0;
+}
+.logo2 {
+  width: 105px;
+  border-radius: var(--br-41xl);
+  background-color: var(--color-darkgray-100);
+  height: 105px;
+}
+.logo2,
+.sriDurgaEngineering {
+  position: relative;
+}
+.plotno14partRajiv {
+  align-self: stretch;
+  position: relative;
+  font-size: var(--font-size-xl);
+  font-weight: 500;
+}
+.gstNumber,
+.header,
+.nameAddress {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-mini);
+}
+.gstNumber,
+.header {
+  align-self: stretch;
+  flex-direction: row;
+  gap: var(--gap-mid);
+}
+.gstNumber {
+  background-color: var(--color-cornflowerblue);
+  padding: var(--padding-3xs) 0;
+  gap: var(--gap-3xs);
+}
+.taxInvoice1 {
+  position: absolute;
+  top: calc(50% - 12px);
+  left: calc(50% - 64px);
+}
+.invoiceNumber,
+.taxInvoiceTitle {
+  align-self: stretch;
+  border: 1px solid var(--color-black);
+}
+.taxInvoiceTitle {
+  position: relative;
+  background-color: var(--color-cornflowerblue);
+  box-sizing: border-box;
+  height: 38px;
+}
+.invoiceNumber {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: var(--padding-3xs);
+  gap: var(--gap-3xs);
+}
+.byHand {
+  flex: 1;
+  position: relative;
+}
+.row1 {
+  align-self: stretch;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+}
+.invoiceDate1,
+.reverseCharge {
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+}
+.invoiceDate1 {
+  width: 100px;
+  position: relative;
+  flex-shrink: 0;
+}
+.reverseCharge {
+  flex: 1;
+  border: 1px solid var(--color-black);
+  overflow: hidden;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding: var(--padding-3xs);
+}
+.na1 {
+  border: 0;
+  outline: 0;
+  font-family: var(--font-inter);
+  background-color: transparent;
+  flex: 1;
+  position: relative;
+  text-align: left;
+}
+.na1,
+.rows {
+  font-size: var(--font-size-base);
+  color: var(--color-black);
+}
+.rows,
+.taxInvoice {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.billToParty {
+  flex: 1;
+  background-color: var(--color-cornflowerblue);
+  border: 1px solid var(--color-black);
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: var(--padding-3xs);
+}
+.billToParty,
+.billingAddress,
+.headings,
+.shipToParty {
+  align-self: stretch;
+  overflow: hidden;
+  display: flex;
+}
+.shipToParty {
+  flex: 1;
+  background-color: var(--color-cornflowerblue);
+  border: 1px solid var(--color-black);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--padding-3xs);
+}
+.billingAddress,
+.headings {
+  flex-direction: row;
+  align-items: flex-start;
+}
+.headings {
+  justify-content: center;
+  text-align: center;
+  color: var(--color-white);
+}
+.billingAddress {
+  flex: 1;
+  border: 1px solid var(--color-black);
+  justify-content: flex-start;
+  padding: var(--padding-3xs);
+  gap: var(--gap-3xs);
+}
+.orderDetails1 {
+  position: absolute;
+  top: calc(50% - 12px);
+  left: calc(50% - 78px);
+}
+.vehicleNumber2 {
+  align-self: stretch;
+  flex: 1;
+  border: 1px solid var(--color-black);
+  overflow: hidden;
+}
+.th {
+  padding-right: var(--padding-xl);
+}
+.th,
+.th8 {
+  position: relative;
+  padding-bottom: var(--padding-xl);
+}
+.tr {
+  background-color: var(--color-cornflowerblue);
+  border-radius: var(--br-8xs);
+}
+.td {
+  position: relative;
+  padding-right: var(--padding-xl);
+}
+.tr1 {
+  border-radius: var(--br-8xs);
+}
+.productDetails {
+  align-self: stretch;
+  gap: var(--gap-xl);
+}
+.details,
+.form {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.details {
+  text-align: left;
+  font-size: var(--font-size-xl);
+  color: var(--color-white);
+}
+.form {
+  padding: var(--padding-xl);
+  gap: var(--gap-xl);
+}
+.invoiceChild {
+  width: 1113px;
+  position: relative;
+  border-top: 1px solid var(--color-black);
+  box-sizing: border-box;
+  height: 1px;
+}
+.bankDetails {
+  position: relative;
+  font-size: var(--font-size-xl);
+}
+.taxableAmount1 {
+  flex: 1;
+  position: relative;
+  font-weight: 500;
+}
+.accountNumber {
+  flex: 1;
+  justify-content: flex-start;
+  gap: var(--gap-3xs);
+}
+.accountNumber,
+.accountNumber1,
+.row13 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+.accountNumber1 {
+  flex: 1;
+  justify-content: flex-end;
+  gap: var(--gap-3xs);
+}
+.row13 {
+  justify-content: flex-start;
+  gap: var(--gap-11xl);
+}
+.bankDetails1,
+.row13 {
+  align-self: stretch;
+}
+.bankDetails1,
+.details1,
+.summary {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.details1 {
+  align-self: stretch;
+  gap: var(--gap-xl);
+}
+.summary {
+  flex: 1;
+  background-color: var(--color-white);
+  overflow: hidden;
+  padding: var(--padding-3xs) var(--padding-xl);
+}
+.taxableAmount9 {
+  flex: 1;
+  position: relative;
+  text-align: right;
+}
+.totalQuantity {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-3xs);
+}
+.taxableAmount11 {
+  flex: 1;
+  position: relative;
+  font-weight: 500;
+  text-align: right;
+}
+.totalQuantity4 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-start;
+  font-size: var(--font-size-xl);
+}
+.details3,
+.totalQuantity4,
+.totalQuantity5 {
+  align-self: stretch;
+  gap: var(--gap-3xs);
+}
+.totalQuantity5 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.details3 {
+  flex-direction: column;
+  font-size: var(--font-size-base);
+}
+.details2,
+.details3,
+.footer1 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+.details2 {
+  flex: 1;
+  flex-direction: column;
+  padding: var(--padding-3xs) var(--padding-xl);
+  gap: var(--gap-11xl);
+  font-size: var(--font-size-11xl);
+}
+.footer1 {
+  align-self: stretch;
+  flex-direction: row;
+  gap: var(--gap-xl);
+}
+.bankDetails3 {
+  align-self: stretch;
+  position: relative;
+}
+.enterYourTermsAndCondition {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  padding-left: 19px;
+}
+.taxableAmount20 {
+  align-self: stretch;
+  position: relative;
+  font-weight: 500;
+}
+.bankDetails4 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  font-size: var(--font-size-sm);
+}
+.bankDetails6,
+.summary2 {
+  align-self: stretch;
+  flex: 1;
+}
+.summary2 {
+  background-color: var(--color-white);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-3xs) var(--padding-xl);
+  gap: var(--gap-3xs);
+}
+.bankDetails6 {
+  border: 1px solid var(--color-black);
+}
+.detailsChild,
+.summary3 {
+  align-self: stretch;
+  overflow: hidden;
+}
+.summary3 {
+  flex: 1;
+  background-color: var(--color-white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 var(--padding-xl);
+  gap: var(--gap-3xs);
+}
+.detailsChild {
+  position: relative;
+  height: 89px;
+  flex-shrink: 0;
+}
+.taxableAmount22 {
+  position: relative;
+  font-size: var(--font-size-xs);
+}
+.details5 {
+  align-self: stretch;
+  flex: 1;
+  border: 1px solid var(--color-black);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: var(--padding-3xs) 0;
+  gap: var(--gap-3xs);
+  font-size: var(--font-size-base);
+}
+.footer,
+.footer2 {
+  align-self: stretch;
+  gap: var(--gap-xl);
+}
+.footer2 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  font-size: var(--font-size-xl);
+}
+.footer {
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+  font-size: var(--font-size-sm);
+}
+.addInvoice,
+.dashboard1,
+.footer,
+.invoice1 {
+  display: flex;
+  justify-content: flex-start;
+}
+.invoice1 {
+  align-self: stretch;
+  background-color: var(--color-white);
+  flex-direction: column;
+  align-items: center;
+  gap: var(--gap-3xs);
+  text-align: center;
+  font-size: var(--font-size-16xl);
+}
+.addInvoice,
+.dashboard1 {
+  align-items: flex-start;
+}
+.dashboard1 {
+  align-self: stretch;
+  flex: 1;
+  overflow-y: auto;
+  flex-direction: column;
+  padding: var(--padding-11xl) var(--padding-11xl) var(--padding-11xl) 0;
+  gap: var(--gap-21xl);
+}
+.addInvoice {
+  width: 100%;
+  position: relative;
+  background-color: var(--color-whitesmoke-100);
+  height: 1024px;
+  overflow: hidden;
+  flex-direction: row;
+  gap: var(--gap-xl);
+  text-align: left;
+  font-size: var(--font-size-6xl);
+  color: var(--color-black);
+  font-family: var(--font-inter);
+}
+@media screen and (max-width: 1170px) {
+  .frameParent {
+    display: none;
+    padding-left: var(--padding-21xl);
+    box-sizing: border-box;
+  }
+  .dashboard1 {
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-left: var(--padding-11xl);
+    box-sizing: border-box;
+  }
+}

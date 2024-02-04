@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Squada+One:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+body {
+  margin: 0;
+  line-height: normal;
+}
+:root {
+  /* fonts */
+  --font-inter: Inter;
+  --font-nunito: Nunito;
+  --font-squada-one: "Squada One";
+
+  /* font sizes */
+  --font-size-sm: 14px;
+  --font-size-xl: 20px;
+  --font-size-xs: 12px;
+  --font-size-mini: 15px;
+  --font-size-6xl: 25px;
+  --font-size-3xs: 10px;
+  --font-size-11xl: 30px;
+  --font-size-base: 16px;
+  --font-size-16xl: 35px;
+
+  /* Colors */
+  --color-whitesmoke-100: #f0f0f0;
+  --color-whitesmoke-200: #efefef;
+  --color-white: #fff;
+  --color-red: #ff0f0f;
+  --color-lightseagreen: #14bab0;
+  --color-cornflowerblue: #80abff;
+  --color-black: #000;
+  --color-dimgray: #505050;
+  --color-gray-100: #919191;
+  --color-gray-200: #909090;
+  --text: #030229;
+  --color-darkgray-100: #b1b1b1;
+  --color-darkgray-200: #a1a1a1;
+  --color-royalblue: #367aff;
+  --color-dodgerblue: #5790ff;
+
+  /* Gaps */
+  --gap-xl: 20px;
+  --gap-21xl: 40px;
+  --gap-6xl: 25px;
+  --gap-3xs: 10px;
+  --gap-0: 0px;
+  --gap-31xl: 50px;
+  --gap-6xs: 7px;
+  --gap-151xl: 170px;
+  --gap-11xl: 30px;
+  --gap-smi: 13px;
+  --gap-51xl: 70px;
+  --gap-mid: 17px;
+  --gap-mini: 15px;
+
+  /* Paddings */
+  --padding-11xl: 30px;
+  --padding-xl: 20px;
+  --padding-8xs: 5px;
+  --padding-8xl: 27px;
+  --padding-10xs: 3px;
+  --padding-7xs-5: 5.5px;
+  --padding-21xl: 40px;
+  --padding-6xs: 7px;
+  --padding-5xs: 8px;
+  --padding-3xs: 10px;
+
+  /* Border radiuses */
+  --br-3xs: 10px;
+  --br-8xs: 5px;
+  --br-41xl: 60px;
+  --br-11xs: 2px;
+}

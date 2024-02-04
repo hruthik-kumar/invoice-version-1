@@ -1,0 +1,1023 @@
+.logoChild {
+  width: 60px;
+  position: relative;
+  border-radius: 50%;
+  background-color: var(--color-cornflowerblue);
+  height: 60px;
+}
+.logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: var(--padding-6xs) 0;
+  gap: var(--gap-6xs);
+}
+.dashboardIcon {
+  width: 20px;
+  position: relative;
+  height: 20px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.dashboard {
+  position: relative;
+  font-weight: 500;
+}
+.navBarList {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-3xs);
+  cursor: pointer;
+}
+.invoice {
+  align-items: center;
+  color: var(--color-cornflowerblue);
+}
+.invoice,
+.operationalCost,
+.quotation {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: var(--gap-3xs);
+}
+.operationalCost {
+  align-items: flex-start;
+  cursor: pointer;
+}
+.quotation {
+  align-items: center;
+}
+.logoParent,
+.navBarListParent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.navBarListParent {
+  justify-content: flex-start;
+  gap: var(--gap-6xl);
+  font-size: var(--font-size-mini);
+}
+.logoParent {
+  align-self: stretch;
+  justify-content: center;
+  gap: var(--gap-31xl);
+}
+.frameChild {
+  width: 50px;
+  position: relative;
+  border-radius: var(--br-3xs);
+  background-color: var(--color-darkgray-200);
+  height: 50px;
+}
+.freeAccount {
+  position: relative;
+  font-size: var(--font-size-3xs);
+  font-weight: 500;
+  color: var(--color-dimgray);
+}
+.name {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.fill1Icon,
+.fill4Icon {
+  position: absolute;
+  height: 100%;
+  width: 67.63%;
+  top: 0;
+  right: 32.37%;
+  bottom: 0;
+  left: 0;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.fill4Icon {
+  height: 36.53%;
+  width: 32.95%;
+  top: 31.74%;
+  right: -0.58%;
+  bottom: 31.74%;
+  left: 67.63%;
+}
+.fill1Parent {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  width: 17.3px;
+  position: relative;
+  height: 16.7px;
+}
+.frameGroup,
+.frameParent {
+  align-self: stretch;
+  display: flex;
+}
+.frameGroup {
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-3xs);
+  font-size: var(--font-size-mini);
+}
+.frameParent {
+  margin: 0;
+  width: 258px;
+  background-color: var(--color-white);
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: var(--padding-11xl) var(--padding-21xl);
+  box-sizing: border-box;
+  text-align: left;
+  font-size: var(--font-size-11xl);
+  color: var(--color-black);
+  font-family: var(--font-inter);
+}
+.vectorIcon {
+  position: absolute;
+  height: 62.5%;
+  width: 100%;
+  top: 18.93%;
+  right: 0;
+  bottom: 18.57%;
+  left: 0;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.pajamashamburger {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.pajamashamburger,
+.pajamashamburger:hover {
+  display: flex;
+  width: 26px;
+  height: 28px;
+  gap: var(--gap-0);
+}
+.pajamashamburgerParent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-3xs);
+}
+.addInvoices {
+  align-self: stretch;
+  position: relative;
+  height: 30px;
+  flex-shrink: 0;
+}
+.logoIcon {
+  width: 105px;
+  position: relative;
+  border-radius: var(--br-41xl);
+  height: 105px;
+  object-fit: cover;
+}
+.plotno14partRajiv,
+.sriDurgaEngineering {
+  margin: 0;
+  position: relative;
+  font-family: inherit;
+}
+.sriDurgaEngineering {
+  font-size: inherit;
+  font-weight: 700;
+}
+.plotno14partRajiv {
+  align-self: stretch;
+  font-size: var(--font-size-xl);
+  font-weight: 500;
+}
+.companyDetails,
+.gstNumber,
+.nameAddress {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nameAddress {
+  flex-direction: column;
+  gap: var(--gap-mini);
+}
+.companyDetails,
+.gstNumber {
+  align-self: stretch;
+  flex-direction: row;
+}
+.companyDetails {
+  gap: var(--gap-mid);
+  text-align: center;
+  font-size: var(--font-size-16xl);
+}
+.gstNumber {
+  background-color: var(--color-cornflowerblue);
+  padding: var(--padding-3xs) 0;
+  gap: var(--gap-3xs);
+  font-size: var(--font-size-xl);
+  color: var(--color-white);
+}
+.taxInvoice1 {
+  margin: 0;
+  position: absolute;
+  top: calc(50% - 15px);
+  left: calc(50% - 80px);
+  font-size: inherit;
+  font-weight: 700;
+  font-family: inherit;
+}
+.taxInvoiceTitle {
+  align-self: stretch;
+  background-color: var(--color-cornflowerblue);
+  border: 1px solid var(--color-black);
+  box-sizing: border-box;
+  height: 52px;
+}
+.invoiceNo,
+.taxInvoiceTitle {
+  position: relative;
+}
+.invoiceNumber,
+.invoiceNumberTextBox {
+  flex: 1;
+  align-items: center;
+  justify-content: flex-start;
+}
+.invoiceNumberTextBox {
+  border-radius: var(--br-8xs);
+  background-color: var(--color-whitesmoke-200);
+  display: flex;
+  flex-direction: row;
+  padding: var(--padding-8xs);
+}
+.invoiceNumber {
+  align-self: stretch;
+  border: 1px solid var(--color-black);
+  overflow: hidden;
+  padding: var(--padding-3xs);
+  gap: var(--gap-3xs);
+}
+.invoiceNumber,
+.row1,
+.transportModeChild {
+  display: flex;
+  flex-direction: row;
+}
+.transportModeChild {
+  border: 0;
+  outline: 0;
+  font-family: var(--font-inter);
+  font-size: var(--font-size-base);
+  background-color: var(--color-whitesmoke-200);
+  flex: 1;
+  border-radius: var(--br-8xs);
+  align-items: center;
+  justify-content: flex-start;
+  padding: var(--padding-8xs);
+  color: var(--color-black);
+}
+.row1 {
+  align-self: stretch;
+  overflow: hidden;
+  align-items: flex-start;
+  justify-content: center;
+}
+.selectDateButton {
+  width: 184px;
+  position: relative;
+}
+.na {
+  flex: 1;
+  position: relative;
+}
+.vectorIcon1 {
+  width: 9px;
+  position: relative;
+  height: 5.1px;
+}
+.reverseChargeDropDown {
+  border-radius: var(--br-8xs);
+  background-color: var(--color-whitesmoke-200);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: var(--padding-8xs);
+  gap: var(--gap-3xs);
+  font-size: var(--font-size-xs);
+  color: var(--color-gray-200);
+}
+.selectDateButton1 {
+  width: 179px;
+  position: relative;
+}
+.stateDropDown {
+  border-radius: var(--br-8xs);
+  background-color: var(--color-whitesmoke-200);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: var(--padding-8xs);
+  gap: var(--gap-3xs);
+}
+.enterPlaceOf,
+.rows {
+  font-size: var(--font-size-base);
+  color: var(--color-black);
+}
+.enterPlaceOf {
+  border: 0;
+  outline: 0;
+  font-family: var(--font-inter);
+  background-color: transparent;
+  flex: 1;
+  position: relative;
+  text-align: left;
+}
+.rows {
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.billToParty,
+.rows,
+.taxInvoice {
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+}
+.taxInvoice {
+  flex-direction: column;
+  justify-content: flex-start;
+  color: var(--color-white);
+}
+.billToParty {
+  flex: 1;
+  background-color: var(--color-cornflowerblue);
+  border: 1px solid var(--color-black);
+  overflow: hidden;
+  flex-direction: row;
+  justify-content: center;
+  padding: var(--padding-3xs);
+}
+.sameAsBillingAddressCheckChild {
+  width: 14px;
+  position: relative;
+  border-radius: var(--br-11xs);
+  border: 2px solid var(--color-white);
+  box-sizing: border-box;
+  height: 14px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.sameAsBillingAddressCheck {
+  width: 536px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  gap: var(--gap-3xs);
+  text-align: left;
+  font-size: var(--font-size-xs);
+}
+.headings,
+.shipToParty {
+  align-self: stretch;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+.shipToParty {
+  flex: 1;
+  background-color: var(--color-cornflowerblue);
+  border: 1px solid var(--color-black);
+  flex-direction: column;
+  align-items: center;
+  padding: var(--padding-3xs);
+  gap: var(--gap-3xs);
+}
+.headings {
+  flex-direction: row;
+  align-items: flex-start;
+  text-align: center;
+  color: var(--color-white);
+}
+.invoiceNumberTextBox1 {
+  flex: 1;
+  font-family: var(--font-inter);
+  font-size: var(--font-size-base);
+  color: var(--color-black);
+}
+.clientsAddressLine1TextB,
+.shipmentReceiversNameText {
+  border-radius: var(--br-8xs);
+  background-color: var(--color-whitesmoke-200);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: var(--padding-8xs);
+}
+.shipmentReceiversNameText {
+  flex: 1;
+  font-size: var(--font-size-xs);
+  color: var(--color-gray-200);
+}
+.clientsAddressLine1TextB {
+  align-self: stretch;
+}
+.addressSections {
+  flex: 1;
+  flex-direction: column;
+  font-size: var(--font-size-xs);
+  color: var(--color-gray-200);
+}
+.addressSections,
+.addressSections1,
+.billingAddress {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.billingAddress {
+  align-self: stretch;
+  flex: 1;
+  border: 1px solid var(--color-black);
+  overflow: hidden;
+  flex-direction: row;
+  padding: var(--padding-3xs);
+  gap: var(--gap-3xs);
+}
+.addressSections1 {
+  width: 384px;
+  flex-direction: column;
+  font-size: var(--font-size-xs);
+  color: var(--color-gray-200);
+}
+.clientDetails,
+.stateDropDown1 {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: var(--font-size-base);
+}
+.stateDropDown1 {
+  border: 0;
+  outline: 0;
+  font-family: var(--font-inter);
+  background-color: var(--color-whitesmoke-200);
+  border-radius: var(--br-8xs);
+  flex-direction: row;
+  padding: var(--padding-8xs);
+  color: var(--color-black);
+}
+.clientDetails {
+  align-self: stretch;
+  flex-direction: column;
+}
+.orderDetails1 {
+  position: absolute;
+  top: calc(50% - 15px);
+  left: calc(50% - 98px);
+}
+.selectDateButton2 {
+  width: 171px;
+  position: relative;
+}
+.vehicleNumber2 {
+  align-self: stretch;
+  flex: 1;
+  border: 1px solid var(--color-black);
+  overflow: hidden;
+}
+.sno1 {
+  flex: 1;
+  position: relative;
+  font-size: var(--font-size-base);
+  font-family: var(--font-inter);
+  color: var(--color-white);
+  text-align: center;
+}
+.sno,
+.sno:hover {
+  display: flex;
+  height: auto;
+  flex-direction: row;
+  gap: var(--gap-3xs);
+  align-items: center;
+  justify-content: flex-start;
+  padding: var(--padding-8xs);
+  box-sizing: border-box;
+}
+.sno {
+  width: 100%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.sno:hover {
+  width: 63px;
+  align-self: stretch;
+}
+.td {
+  position: relative;
+  padding-right: var(--padding-xl);
+  padding-bottom: var(--padding-xl);
+}
+.productDetails2 {
+  flex: 1;
+  position: relative;
+  font-size: var(--font-size-base);
+  font-family: var(--font-inter);
+  color: var(--color-white);
+  text-align: left;
+}
+.productDetails1 {
+  width: 100%;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: var(--padding-3xs);
+  box-sizing: border-box;
+  height: auto;
+  gap: var(--gap-3xs);
+}
+.productDetails1:hover {
+  width: 220px;
+  align-self: stretch;
+}
+.hsn {
+  position: relative;
+  font-size: var(--font-size-base);
+  font-family: var(--font-inter);
+  color: var(--color-white);
+  text-align: center;
+}
+.hsnCode,
+.hsnCode:hover,
+.productDetails1:hover {
+  display: flex;
+  height: auto;
+  flex-direction: row;
+  gap: var(--gap-3xs);
+  align-items: center;
+  justify-content: flex-start;
+  padding: var(--padding-3xs);
+  box-sizing: border-box;
+}
+.hsnCode {
+  overflow: hidden;
+  width: 100%;
+}
+.hsnCode:hover {
+  flex: 1;
+}
+.taxableAmount1,
+.taxableAmount2,
+.taxableAmount3 {
+  position: relative;
+  font-size: var(--font-size-base);
+  font-family: var(--font-inter);
+  color: var(--color-white);
+  text-align: left;
+}
+.hsnCode:hover,
+.taxableAmount2,
+.taxableAmount3 {
+  align-self: stretch;
+}
+.taxableAmount3 {
+  font-size: var(--font-size-xs);
+}
+.taxableAmountGroup,
+.taxableAmountParent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-3xs);
+}
+.taxableAmountGroup {
+  align-self: stretch;
+  align-items: flex-start;
+  justify-content: center;
+}
+.taxableAmountParent {
+  flex: 1;
+  align-items: center;
+  justify-content: flex-start;
+}
+.taxableAmount,
+.taxableAmount:hover {
+  background-color: var(--color-dodgerblue);
+  height: auto;
+  flex-direction: row;
+  justify-content: center;
+  padding: var(--padding-3xs);
+  box-sizing: border-box;
+}
+.taxableAmount {
+  overflow: hidden;
+  width: 100%;
+}
+.taxableAmount:hover {
+  flex: 1;
+  align-self: stretch;
+}
+.frameDiv,
+.taxableAmount,
+.taxableAmount4,
+.taxableAmount4:hover,
+.taxableAmount:hover {
+  display: flex;
+  gap: var(--gap-3xs);
+  align-items: flex-start;
+}
+.frameDiv {
+  align-self: stretch;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.taxableAmount4,
+.taxableAmount4:hover {
+  background-color: var(--color-royalblue);
+  height: auto;
+  flex-direction: row;
+  justify-content: center;
+  padding: var(--padding-3xs);
+  box-sizing: border-box;
+}
+.taxableAmount4 {
+  overflow: hidden;
+  width: 100%;
+}
+.taxableAmount4:hover {
+  flex: 1;
+  align-self: stretch;
+}
+.td8 {
+  position: relative;
+  padding-bottom: var(--padding-xl);
+}
+.tr {
+  background-color: var(--color-cornflowerblue);
+  border-radius: var(--br-8xs);
+}
+.b {
+  flex: 1;
+  position: relative;
+  font-size: var(--font-size-xs);
+  font-family: var(--font-inter);
+  color: var(--color-black);
+  text-align: left;
+}
+.sno2 {
+  width: 100%;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-3xs);
+  box-sizing: border-box;
+  height: 100%;
+}
+.productName {
+  border: 0;
+  background-color: transparent;
+  font-weight: 700;
+}
+.productName,
+.productName1 {
+  align-self: stretch;
+  font-family: var(--font-inter);
+  font-size: var(--font-size-xs);
+  color: var(--color-black);
+}
+.productDetails4 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-3xs);
+}
+.productDetails3 {
+  width: 100%;
+  overflow: hidden;
+  flex-shrink: 0;
+  padding: 0 var(--padding-3xs);
+  height: 100%;
+}
+.hsn1,
+.hsnCode1,
+.productDetails3 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  box-sizing: border-box;
+}
+.hsn1 {
+  border: 0;
+  background-color: var(--color-whitesmoke-200);
+  height: auto;
+  width: auto;
+  font-family: var(--font-inter);
+  font-size: var(--font-size-xs);
+  outline: 0;
+  flex: 1;
+  border-radius: var(--br-8xs);
+  padding: var(--padding-8xs);
+  font-weight: 700;
+  color: var(--color-black);
+}
+.hsnCode1 {
+  overflow: hidden;
+  padding: 0 var(--padding-3xs);
+  width: 100%;
+  height: 100%;
+}
+.h6 {
+  margin: 0;
+  flex: 1;
+  position: relative;
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  font-family: var(--font-inter);
+  color: var(--color-black);
+  text-align: left;
+}
+.rate6 {
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-8xs) var(--padding-3xs);
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+}
+.h61,
+.percent {
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  font-family: var(--font-inter);
+  color: var(--color-black);
+  display: flex;
+}
+.percent {
+  border: 0;
+  background-color: var(--color-whitesmoke-200);
+  height: auto;
+  width: auto;
+  outline: 0;
+  border-radius: var(--br-8xs);
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-8xs);
+  box-sizing: border-box;
+}
+.h61 {
+  margin: 0;
+  width: 82.7px;
+  position: relative;
+  text-align: left;
+  align-items: center;
+}
+.cgst,
+.percent1 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  box-sizing: border-box;
+}
+.cgst {
+  overflow: hidden;
+  flex-direction: column;
+  padding: 0 var(--padding-3xs);
+  gap: var(--gap-3xs);
+  width: 100%;
+  height: 100%;
+}
+.percent1 {
+  border: 0;
+  background-color: var(--color-whitesmoke-200);
+  height: auto;
+  width: auto;
+  font-family: var(--font-inter);
+  font-size: var(--font-size-xs);
+  outline: 0;
+  align-self: stretch;
+  flex-direction: row;
+  padding: var(--padding-8xs);
+  font-weight: 700;
+  color: var(--color-black);
+}
+.percent1,
+.tr1 {
+  border-radius: var(--br-8xs);
+}
+.td18 {
+  position: relative;
+  padding-right: var(--padding-xl);
+}
+.productDetails {
+  align-self: stretch;
+}
+.taxableAmount14 {
+  position: relative;
+  font-size: var(--font-size-base);
+  font-weight: 500;
+  font-family: var(--font-inter);
+  color: var(--color-white);
+  text-align: left;
+}
+.addNewProduct,
+.sections {
+  display: flex;
+  justify-content: flex-start;
+}
+.sections {
+  cursor: pointer;
+  border: 0;
+  padding: var(--padding-3xs);
+  background-color: var(--color-cornflowerblue);
+  border-radius: var(--br-8xs);
+  flex-direction: row;
+  align-items: flex-start;
+}
+.addNewProduct {
+  align-self: stretch;
+  flex-direction: column;
+  align-items: center;
+}
+.taxableAmount15,
+.taxableAmount16 {
+  margin: 0;
+  position: relative;
+  font-size: inherit;
+  font-weight: 500;
+  font-family: inherit;
+}
+.taxableAmount16 {
+  flex: 1;
+  font-weight: 400;
+  text-align: right;
+}
+.totalQuantity {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-3xs);
+}
+.taxableAmount18,
+.taxableAmount23,
+.taxableAmount24 {
+  margin: 0;
+  flex: 1;
+  position: relative;
+  font-size: inherit;
+  font-family: inherit;
+}
+.taxableAmount18 {
+  font-weight: 500;
+  text-align: right;
+}
+.taxableAmount23,
+.taxableAmount24 {
+  font-weight: 700;
+}
+.taxableAmount24 {
+  text-align: right;
+}
+.totalQuantity4 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-start;
+  gap: var(--gap-3xs);
+  font-size: var(--font-size-xl);
+}
+.details,
+.details1 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.details1 {
+  align-self: stretch;
+  gap: var(--gap-3xs);
+  font-size: var(--font-size-base);
+}
+.details {
+  width: 313px;
+  gap: var(--gap-11xl);
+}
+.summary,
+.summary1 {
+  align-self: stretch;
+  flex-direction: column;
+}
+.summary1 {
+  background-color: var(--color-white);
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: var(--padding-3xs) var(--padding-xl);
+}
+.summary {
+  align-items: center;
+  font-size: var(--font-size-11xl);
+}
+.addInvoice,
+.dashboard1,
+.form,
+.summary {
+  display: flex;
+  justify-content: flex-start;
+}
+.form {
+  align-self: stretch;
+  background-color: var(--color-white);
+  flex-direction: column;
+  align-items: center;
+  padding: var(--padding-11xl) var(--padding-xl);
+  gap: var(--gap-xl);
+  text-align: left;
+  font-size: var(--font-size-6xl);
+  color: var(--color-black);
+  font-family: var(--font-inter);
+}
+.addInvoice,
+.dashboard1 {
+  align-items: flex-start;
+}
+.dashboard1 {
+  align-self: stretch;
+  flex: 1;
+  overflow-y: auto;
+  flex-direction: column;
+  padding: var(--padding-11xl) var(--padding-11xl) var(--padding-11xl) 0;
+  gap: var(--gap-21xl);
+}
+.addInvoice {
+  width: 100%;
+  position: relative;
+  background-color: var(--color-whitesmoke-100);
+  overflow: hidden;
+  flex-direction: row;
+  gap: var(--gap-xl);
+  text-align: left;
+  font-size: var(--font-size-6xl);
+  color: var(--color-black);
+  font-family: var(--font-inter);
+}
+@media screen and (max-width: 1440px) {
+  .pajamashamburger {
+    display: none;
+  }
+}
+@media screen and (max-width: 1170px) {
+  .frameParent {
+    display: none;
+    padding-left: var(--padding-21xl);
+    box-sizing: border-box;
+  }
+  .pajamashamburger {
+    display: flex;
+  }
+  .dashboard1 {
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-left: var(--padding-11xl);
+    box-sizing: border-box;
+  }
+}

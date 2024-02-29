@@ -1,12 +1,31 @@
-import { useState, useCallback } from "react";
+import React, { useState, useCallback, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import FrameComponent from "../components/FrameComponent";
 import PortalDrawer from "../components/PortalDrawer";
 import styles from "./Home.module.css";
+import DashBoardTilesInfo_API from "../apiEndpoints";
 
 const Home = () => {
   const navigate = useNavigate();
   const [isFrameOpen, setFrameOpen] = useState(false);
+  const [revenueData, setRevenueData] = useState(null);
+  const [loading, setLoading] = useState(true); // Add loading state
+
+  useEffect(() => {
+    // Make API request here
+    const fetchData = async () => {
+      try {
+        const response = await fetch(DashBoardTilesInfo_API);
+        const data = await response.json();
+        setRevenueData(data['body-json']);
+        setLoading(false); // Update loading state after data is fetched
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []); // Empty dependency array to ensure this effect runs only once on component mount
 
   const onCustomersContainerClick = useCallback(() => {
     navigate("/customers-list");
@@ -31,6 +50,11 @@ const Home = () => {
   const closeFrame = useCallback(() => {
     setFrameOpen(false);
   }, []);
+
+  if (loading) {
+    // Render loading state while data is being fetched
+    return <div>Loading...</div>;
+  }
 
   return (
     <>
@@ -156,7 +180,7 @@ const Home = () => {
                     </div>
                     <div className={styles.nonIcon}>
                       <div className={styles.totalRevenueAmount}>
-                        <b className={styles.monthlyRevenue}>Rs.10,00,000</b>
+                        <b className={styles.monthlyRevenue}>Rs.{revenueData.totalRevenue}</b>
                       </div>
                       <div className={styles.totalRevenue1}>
                         <div className={styles.monthlyRevenue}>
@@ -173,7 +197,7 @@ const Home = () => {
                     </div>
                     <div className={styles.nonIcon}>
                       <div className={styles.totalRevenueAmount1}>
-                        <b className={styles.monthlyRevenue}>Rs.10,00,000</b>
+                        <b className={styles.monthlyRevenue}>Rs.{revenueData.monthlyRevenue}</b>
                       </div>
                       <div className={styles.totalRevenue4}>
                         <div className={styles.monthlyRevenue}>
@@ -209,7 +233,7 @@ const Home = () => {
                     </div>
                     <div className={styles.nonIcon}>
                       <div className={styles.totalRevenueAmount1}>
-                        <b className={styles.monthlyRevenue}>15</b>
+                        <b className={styles.monthlyRevenue}>{revenueData.pendingInvoices}</b>
                       </div>
                       <div className={styles.totalRevenue4}>
                         <div className={styles.monthlyRevenue}>

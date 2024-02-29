@@ -46,7 +46,7 @@ const Home = () => {
                 <img
                   className={styles.dashboardIcon}
                   alt=""
-                  src="/dashboard-icon.svg"
+                  src="/dashboard icon-blu.svg"
                 />
                 <div className={styles.dashboard}>Dashboard</div>
               </div>
@@ -57,7 +57,7 @@ const Home = () => {
                 <img
                   className={styles.dashboardIcon}
                   alt=""
-                  src="/dashboard-icon1.svg"
+                  src="/customers icon-blk.svg"
                 />
                 <div className={styles.dashboard}>Customers</div>
               </div>
@@ -68,7 +68,7 @@ const Home = () => {
                 <img
                   className={styles.dashboardIcon}
                   alt=""
-                  src="/invoices-icon.svg"
+                  src="/invoices icon-blk.svg"
                 />
                 <div className={styles.dashboard}>Invoices</div>
               </div>
@@ -79,7 +79,7 @@ const Home = () => {
                 <img
                   className={styles.dashboardIcon}
                   alt=""
-                  src="/operational-cost.svg"
+                  src="/operational cost-blk.svg"
                 />
                 <div className={styles.dashboard}>Operational cost</div>
               </div>
@@ -90,7 +90,7 @@ const Home = () => {
                 <img
                   className={styles.dashboardIcon}
                   alt=""
-                  src="/invoices-icon1.svg"
+                  src="/dc icon-blk.svg"
                 />
                 <div className={styles.dashboard}>Delivery Challan</div>
               </div>
@@ -141,7 +141,7 @@ const Home = () => {
         <div className={styles.dashboard1}>
           <div className={styles.quotation}>
             <button className={styles.pajamashamburger} onClick={openFrame}>
-              <img className={styles.vectorIcon} alt="" src="/vector.svg" />
+              <img className={styles.vectorIcon} alt="" src="/ham.svg" />
             </button>
             <h2 className={styles.dashboard2}>Dashboard</h2>
           </div>

@@ -267,6 +267,7 @@
 .td5 {
   position: relative;
   padding-bottom: var(--padding-xl);
+  padding-left: var(--padding-xl);
 }
 .deleteEntry1,
 .editEntry1 {

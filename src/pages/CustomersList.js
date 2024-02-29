@@ -117,7 +117,7 @@ const CustomersList = () => {
             </div>
             <div className={styles.pajamashamburgerParent}>
               <button className={styles.pajamashamburger} onClick={openFrame}>
-                <img className={styles.vectorIcon} alt="" src="/vector.svg" />
+                <img className={styles.vectorIcon} alt="" src="/ham.svg" />
               </button>
               <h2 className={styles.customerList}>Customer List</h2>
             </div>

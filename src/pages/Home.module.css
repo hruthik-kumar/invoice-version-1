@@ -437,6 +437,7 @@
 .td7 {
   position: relative;
   padding-bottom: var(--padding-xl);
+  padding-left: var(--padding-xl) ;
 }
 .deleteInvoice1,
 .editInvoice1,

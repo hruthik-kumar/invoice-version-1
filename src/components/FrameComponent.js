@@ -62,7 +62,7 @@ const FrameComponent = ({ onClose }) => {
             <img
               className={styles.dashboardIcon}
               alt=""
-              src="/dashboard-icon2.svg"
+              src="/dashboard icon-blk.svg"
             />
             <div className={styles.dashboard}>Dashboard</div>
           </div>
@@ -70,7 +70,7 @@ const FrameComponent = ({ onClose }) => {
             <img
               className={styles.dashboardIcon}
               alt=""
-              src="/dashboard-icon1.svg"
+              src="/customers icon-blk.svg"
             />
             <div className={styles.dashboard}>Customers</div>
           </div>
@@ -78,7 +78,7 @@ const FrameComponent = ({ onClose }) => {
             <img
               className={styles.dashboardIcon}
               alt=""
-              src="/invoices-icon.svg"
+              src="/invoices icon-blk.svg"
             />
             <div className={styles.dashboard}>Invoices</div>
           </div>
@@ -89,7 +89,7 @@ const FrameComponent = ({ onClose }) => {
             <img
               className={styles.dashboardIcon}
               alt=""
-              src="/operational-cost.svg"
+              src="/operational cost-blk.svg"
             />
             <div className={styles.dashboard}>Operational cost</div>
           </div>
@@ -100,7 +100,7 @@ const FrameComponent = ({ onClose }) => {
             <img
               className={styles.dashboardIcon}
               alt=""
-              src="/invoices-icon1.svg"
+              src="/dc icon-blk.svg"
             />
             <div className={styles.dashboard}>Delivery Challan</div>
           </div>

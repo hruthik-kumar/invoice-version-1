@@ -48,7 +48,7 @@ const OperationalCost = () => {
                 <img
                   className={styles.dashboardIcon}
                   alt=""
-                  src="/dashboard-icon2.svg"
+                  src="/dashboard icon-blk.svg"
                 />
                 <div className={styles.dashboard}>Dashboard</div>
               </div>
@@ -59,7 +59,7 @@ const OperationalCost = () => {
                 <img
                   className={styles.dashboardIcon}
                   alt=""
-                  src="/dashboard-icon1.svg"
+                  src="/customers icon-blk.svg"
                 />
                 <div className={styles.dashboard}>Customers</div>
               </div>
@@ -70,7 +70,7 @@ const OperationalCost = () => {
                 <img
                   className={styles.dashboardIcon}
                   alt=""
-                  src="/invoices-icon.svg"
+                  src="/invoices icon-blk.svg"
                 />
                 <div className={styles.dashboard}>Invoices</div>
               </div>
@@ -78,7 +78,7 @@ const OperationalCost = () => {
                 <img
                   className={styles.dashboardIcon}
                   alt=""
-                  src="/operational-cost1.svg"
+                  src="/operational cost-blu.svg"
                 />
                 <div className={styles.dashboard}>Operational cost</div>
               </div>
@@ -89,7 +89,7 @@ const OperationalCost = () => {
                 <img
                   className={styles.dashboardIcon}
                   alt=""
-                  src="/invoices-icon1.svg"
+                  src="/dc icon-blk.svg"
                 />
                 <div className={styles.dashboard}>Delivery Challan</div>
               </div>
@@ -136,7 +136,7 @@ const OperationalCost = () => {
             <div className={styles.frameWrapper}>
               <div className={styles.pajamashamburgerParent}>
                 <button className={styles.pajamashamburger} onClick={openFrame}>
-                  <img className={styles.vectorIcon} alt="" src="/vector.svg" />
+                  <img className={styles.vectorIcon} alt="" src="/ham.svg" />
                 </button>
                 <h2 className={styles.operationalCost3}>Operational Cost</h2>
               </div>

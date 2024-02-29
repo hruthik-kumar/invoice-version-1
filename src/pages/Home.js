@@ -4,9 +4,19 @@ import FrameComponent from "../components/FrameComponent";
 import PortalDrawer from "../components/PortalDrawer";
 import styles from "./Home.module.css";
 import DashBoardTilesInfo_API from "../apiEndpoints";
+import { Table, TableHead, TableBody, TableRow, TableCell, TablePagination, Paper } from '@mui/material';
+
+
+
+
 
 const Home = () => {
   const navigate = useNavigate();
+
+  const [tableData, setTableData] = useState([]);
+  const [tablePage, setTablePage] = useState(0);
+  const [rowsPerPage, setRowsPerPage] = useState(7);
+
   const [isFrameOpen, setFrameOpen] = useState(false);
   const [revenueData, setRevenueData] = useState(null);
   const [loading, setLoading] = useState(true); // Add loading state
@@ -18,6 +28,7 @@ const Home = () => {
         const response = await fetch(DashBoardTilesInfo_API);
         const data = await response.json();
         setRevenueData(data['body-json']);
+        setTableData(data['body-json']['table_data']['invoices'])
         setLoading(false); // Update loading state after data is fetched
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -26,6 +37,17 @@ const Home = () => {
 
     fetchData();
   }, []); // Empty dependency array to ensure this effect runs only once on component mount
+
+  // Handle page change
+  const handleChangePage = (event, newPage) => {
+    setTablePage(newPage);
+  };
+
+  // Handle rows per page change
+  const handleChangeRowsPerPage = event => {
+    setRowsPerPage(parseInt(event.target.value, 7));
+    setTablePage(0);
+  };
 
   const onCustomersContainerClick = useCallback(() => {
     navigate("/customers-list");
@@ -50,6 +72,24 @@ const Home = () => {
   const closeFrame = useCallback(() => {
     setFrameOpen(false);
   }, []);
+
+  // Render table rows
+  const renderRows = () => {
+    const startIndex = tablePage * rowsPerPage;
+    const endIndex = startIndex + rowsPerPage;
+    return tableData.slice(startIndex, endIndex).map(item => (
+      <TableRow key={item.id}>
+        <TableCell>{item.invoiceNo}</TableCell>
+        <TableCell>{item.gstNo}</TableCell>
+        <TableCell>{item.amount}</TableCell>
+        <TableCell>{item.companyName}</TableCell>
+        <TableCell>{item.date}</TableCell>
+        <TableCell>{item.status}</TableCell>
+        <TableCell></TableCell>
+        <TableCell></TableCell>
+      </TableRow>
+    ));
+  };
 
   if (loading) {
     // Render loading state while data is being fetched
@@ -280,300 +320,35 @@ const Home = () => {
           </div>
           <section className={styles.recentInvoicesSection}>
             <h3 className={styles.recentInvoices}>Recent invoices</h3>
-            <table className={styles.recentInvoicesSection1}>
-              <tbody>
-                <tr>
-                  <td className={styles.td}>
-                    <b className={styles.invoiceNo}>Invoice No.</b>
-                  </td>
-                  <td className={styles.td}>
-                    <b className={styles.invoiceNo}>GST No.</b>
-                  </td>
-                  <td className={styles.td}>
-                    <b className={styles.invoiceNo}>Amount</b>
-                  </td>
-                  <td className={styles.td}>
-                    <b className={styles.invoiceNo}>Company name</b>
-                  </td>
-                  <td className={styles.td}>
-                    <b className={styles.invoiceNo}>Date</b>
-                  </td>
-                  <td className={styles.td}>
-                    <b className={styles.invoiceNo}>Status</b>
-                  </td>
-                  <td className={styles.td}>
-                    <b className={styles.invoiceNo}>Edit invoice</b>
-                  </td>
-                  <td className={styles.td7}>
-                    <b className={styles.invoiceNo}>Delete invoice</b>
-                  </td>
-                </tr>
-                <tr>
-                  <td className={styles.td}>
-                    <div className={styles.invoiceNo}>876364</div>
-                  </td>
-                  <td className={styles.td}>
-                    <div className={styles.invoiceNo}>123456</div>
-                  </td>
-                  <td className={styles.td}>
-                    <div className={styles.invoiceNo}>5000</div>
-                  </td>
-                  <td className={styles.td}>
-                    <div className={styles.invoiceNo}>abcdefgh</div>
-                  </td>
-                  <td className={styles.td}>
-                    <div className={styles.invoiceNo}>1-1-1</div>
-                  </td>
-                  <td className={styles.td}>
-                    <select className={styles.pendingParent}>
-                      <option value="0">Pending</option>
-                      <option value="1">Completed</option>
-                    </select>
-                  </td>
-                  <td className={styles.td}>
-                    <button className={styles.editInvoice1}>
-                      Edit invoice
-                    </button>
-                  </td>
-                  <td className={styles.td7}>
-                    <button className={styles.deleteInvoice1}>
-                      Delete invoice
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td className={styles.td}>
-                    <div className={styles.invoiceNo}>876364</div>
-                  </td>
-                  <td className={styles.td}>
-                    <div className={styles.invoiceNo}>123456</div>
-                  </td>
-                  <td className={styles.td}>
-                    <div className={styles.invoiceNo}>5000</div>
-                  </td>
-                  <td className={styles.td}>
-                    <div className={styles.invoiceNo}>abcdefgh</div>
-                  </td>
-                  <td className={styles.td}>
-                    <div className={styles.invoiceNo}>1-1-1</div>
-                  </td>
-                  <td className={styles.td}>
-                    <select className={styles.pendingParent}>
-                      <option value="0">Pending</option>
-                      <option value="1">Completed</option>
-                    </select>
-                  </td>
-                  <td className={styles.td}>
-                    <button className={styles.editInvoice1}>
-                      Edit invoice
-                    </button>
-                  </td>
-                  <td className={styles.td7}>
-                    <button className={styles.deleteInvoice1}>
-                      Delete invoice
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td className={styles.td}>
-                    <div className={styles.invoiceNo}>876364</div>
-                  </td>
-                  <td className={styles.td}>
-                    <div className={styles.invoiceNo}>123456</div>
-                  </td>
-                  <td className={styles.td}>
-                    <div className={styles.invoiceNo}>5000</div>
-                  </td>
-                  <td className={styles.td}>
-                    <div className={styles.invoiceNo}>abcdefgh</div>
-                  </td>
-                  <td className={styles.td}>
-                    <div className={styles.invoiceNo}>1-1-1</div>
-                  </td>
-                  <td className={styles.td}>
-                    <select className={styles.pendingParent}>
-                      <option value="0">Pending</option>
-                      <option value="1">Completed</option>
-                    </select>
-                  </td>
-                  <td className={styles.td}>
-                    <button className={styles.editInvoice1}>
-                      Edit invoice
-                    </button>
-                  </td>
-                  <td className={styles.td7}>
-                    <button className={styles.deleteInvoice1}>
-                      Delete invoice
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td className={styles.td}>
-                    <div className={styles.invoiceNo}>876364</div>
-                  </td>
-                  <td className={styles.td}>
-                    <div className={styles.invoiceNo}>123456</div>
-                  </td>
-                  <td className={styles.td}>
-                    <div className={styles.invoiceNo}>5000</div>
-                  </td>
-                  <td className={styles.td}>
-                    <div className={styles.invoiceNo}>abcdefgh</div>
-                  </td>
-                  <td className={styles.td}>
-                    <div className={styles.invoiceNo}>1-1-1</div>
-                  </td>
-                  <td className={styles.td}>
-                    <select className={styles.pendingParent}>
-                      <option value="0">Pending</option>
-                      <option value="1">Completed</option>
-                    </select>
-                  </td>
-                  <td className={styles.td}>
-                    <button className={styles.editInvoice1}>
-                      Edit invoice
-                    </button>
-                  </td>
-                  <td className={styles.td7}>
-                    <button className={styles.deleteInvoice1}>
-                      Delete invoice
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td className={styles.td}>
-                    <div className={styles.invoiceNo}>876364</div>
-                  </td>
-                  <td className={styles.td}>
-                    <div className={styles.invoiceNo}>123456</div>
-                  </td>
-                  <td className={styles.td}>
-                    <div className={styles.invoiceNo}>5000</div>
-                  </td>
-                  <td className={styles.td}>
-                    <div className={styles.invoiceNo}>abcdefgh</div>
-                  </td>
-                  <td className={styles.td}>
-                    <div className={styles.invoiceNo}>1-1-1</div>
-                  </td>
-                  <td className={styles.td}>
-                    <select className={styles.pendingParent}>
-                      <option value="0">Pending</option>
-                      <option value="1">Completed</option>
-                    </select>
-                  </td>
-                  <td className={styles.td}>
-                    <button className={styles.editInvoice1}>
-                      Edit invoice
-                    </button>
-                  </td>
-                  <td className={styles.td7}>
-                    <button className={styles.deleteInvoice1}>
-                      Delete invoice
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td className={styles.td}>
-                    <div className={styles.invoiceNo}>876364</div>
-                  </td>
-                  <td className={styles.td}>
-                    <div className={styles.invoiceNo}>123456</div>
-                  </td>
-                  <td className={styles.td}>
-                    <div className={styles.invoiceNo}>5000</div>
-                  </td>
-                  <td className={styles.td}>
-                    <div className={styles.invoiceNo}>abcdefgh</div>
-                  </td>
-                  <td className={styles.td}>
-                    <div className={styles.invoiceNo}>1-1-1</div>
-                  </td>
-                  <td className={styles.td}>
-                    <select className={styles.pendingParent}>
-                      <option value="0">Pending</option>
-                      <option value="1">Completed</option>
-                    </select>
-                  </td>
-                  <td className={styles.td}>
-                    <button className={styles.editInvoice1}>
-                      Edit invoice
-                    </button>
-                  </td>
-                  <td className={styles.td7}>
-                    <button className={styles.deleteInvoice1}>
-                      Delete invoice
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td className={styles.td}>
-                    <div className={styles.invoiceNo}>876364</div>
-                  </td>
-                  <td className={styles.td}>
-                    <div className={styles.invoiceNo}>123456</div>
-                  </td>
-                  <td className={styles.td}>
-                    <div className={styles.invoiceNo}>5000</div>
-                  </td>
-                  <td className={styles.td}>
-                    <div className={styles.invoiceNo}>abcdefgh</div>
-                  </td>
-                  <td className={styles.td}>
-                    <div className={styles.invoiceNo}>1-1-1</div>
-                  </td>
-                  <td className={styles.td}>
-                    <select className={styles.pendingParent}>
-                      <option value="0">Pending</option>
-                      <option value="1">Completed</option>
-                    </select>
-                  </td>
-                  <td className={styles.td}>
-                    <button className={styles.editInvoice1}>
-                      Edit invoice
-                    </button>
-                  </td>
-                  <td className={styles.td7}>
-                    <button className={styles.deleteInvoice1}>
-                      Delete invoice
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td className={styles.td64}>
-                    <div className={styles.invoiceNo}>876364</div>
-                  </td>
-                  <td className={styles.td64}>
-                    <div className={styles.invoiceNo}>123456</div>
-                  </td>
-                  <td className={styles.td64}>
-                    <div className={styles.invoiceNo}>5000</div>
-                  </td>
-                  <td className={styles.td64}>
-                    <div className={styles.invoiceNo}>abcdefgh</div>
-                  </td>
-                  <td className={styles.td64}>
-                    <div className={styles.invoiceNo}>1-1-1</div>
-                  </td>
-                  <td className={styles.td64}>
-                    <select className={styles.pendingParent}>
-                      <option value="0">Pending</option>
-                      <option value="1">Completed</option>
-                    </select>
-                  </td>
-                  <td className={styles.td64}>
-                    <button className={styles.editInvoice1}>
-                      Edit invoice
-                    </button>
-                  </td>
-                  <td className={styles.logo1}>
-                    <button className={styles.deleteInvoice1}>
-                      Delete invoice
-                    </button>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+            <Paper style= {{ width: '100%' }}>
+              <Table> 
+                <TableHead>
+                  <TableRow>
+                    <TableCell>Invoice No.</TableCell>
+                    <TableCell>GST No.</TableCell>
+                    <TableCell>Amount</TableCell>
+                    <TableCell>Company name</TableCell>
+                    <TableCell>Date</TableCell>
+                    <TableCell>Status</TableCell>
+                    <TableCell>Edit invoice</TableCell>
+                    <TableCell>Delete invoice</TableCell>
+                    {/* Add other table headers */}
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  {renderRows()}
+                </TableBody>
+              </Table>
+              <TablePagination
+                rowsPerPageOptions={[10]}
+                component="div"
+                count={tableData.length}
+                rowsPerPage={rowsPerPage}
+                page={tablePage}
+                onPageChange={handleChangePage}
+                onRowsPerPageChange={handleChangeRowsPerPage}
+              />
+            </Paper>
           </section>
         </div>
       </div>

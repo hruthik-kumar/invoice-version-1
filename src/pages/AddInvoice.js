@@ -162,6 +162,7 @@ const AddInvoice = () => {
                         </b>
                         <div>
                           <DatePicker
+                          format="dd/MM/yyyy"
                             value={selectDateButtonValue}
                             onChange={(newValue) => {
                               setSelectDateButtonValue(newValue);

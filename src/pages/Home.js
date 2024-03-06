@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import FrameComponent from "../components/FrameComponent";
 import PortalDrawer from "../components/PortalDrawer";
 import styles from "./Home.module.css";
-import DashBoardTilesInfo_API from "../apiEndpoints";
+import {DashBoardTilesInfo_API} from "../apiEndpoints";
 import { Table, TableHead, TableBody, TableRow, TableCell, TablePagination, Paper } from '@mui/material';
 
 
@@ -224,7 +224,7 @@ const Home = () => {
                       </div>
                       <div className={styles.totalRevenue1}>
                         <div className={styles.monthlyRevenue}>
-                          Total revenue
+                          Financial Year Revenue
                         </div>
                       </div>
                     </div>
@@ -252,7 +252,7 @@ const Home = () => {
                 <div className={styles.totalRevenue5}>
                   <div className={styles.frameDiv}>
                     <div className={styles.wrapper}>
-                      <div className={styles.div}>₹</div>
+                      <div className={styles.div}></div>
                     </div>
                     <div className={styles.nonIcon2}>
                       <div className={styles.totalRevenueAmount1}>

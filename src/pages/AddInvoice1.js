@@ -167,6 +167,7 @@ const AddInvoice1 = () => {
                       </b>
                       <div className={styles.selectDateButton}>
                         <DatePicker
+                          format="dd/MM/yyyy"
                           value={selectDateButtonValue}
                           onChange={(newValue) => {
                             setSelectDateButtonValue(newValue);
@@ -219,6 +220,7 @@ const AddInvoice1 = () => {
                       </b>
                       <div className={styles.selectDateButton}>
                         <DatePicker
+                          format="dd/MM/yyyy"
                           value={selectDateButton1Value}
                           onChange={(newValue) => {
                             setSelectDateButton1Value(newValue);
@@ -391,6 +393,7 @@ const AddInvoice1 = () => {
                       </b>
                       <div className={styles.selectDateButton}>
                         <DatePicker
+                          format="dd/MM/yyyy"
                           value={selectDateButton2Value}
                           onChange={(newValue) => {
                             setSelectDateButton2Value(newValue);

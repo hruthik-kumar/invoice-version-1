@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import React, { useState, useCallback, useEffect } from "react";
 import "antd/dist/antd.min.css";
 import { TextField, Icon, InputAdornment, IconButton } from "@mui/material";
 import { LocalizationProvider, DatePicker } from "@mui/x-date-pickers";
@@ -8,6 +8,10 @@ import { useNavigate } from "react-router-dom";
 import FrameComponent from "../components/FrameComponent";
 import PortalDrawer from "../components/PortalDrawer";
 import styles from "./AddInvoice2.module.css";
+import axios from 'axios';
+import {companyInfo_API, CustomerListForCompany_API} from "../apiEndpoints";
+import DeleteIcon from '@mui/icons-material/Delete';
+
 
 const AddInvoice2 = () => {
   const [selectDateButtonValue, setSelectDateButtonValue] = useState(null);
@@ -15,6 +19,63 @@ const AddInvoice2 = () => {
   const [selectDateButton2Value, setSelectDateButton2Value] = useState(null);
   const navigate = useNavigate();
   const [isFrameOpen, setFrameOpen] = useState(false);
+  const [companyInfo, setCompanyInfo] = useState({});
+  const [customerInfo, setCustomerInfo] = useState([]);
+  const [formData, setFormData] = useState({
+    invoiceNumber: '',
+  });
+  const [rows, setRows] = useState([
+    { id: 1, productName: '', hsnCode: '', quantity: '', rate: '', cgstPercent: '', sgstPercent: '' },
+  ]);
+
+  const addRow = () => {
+    const newRowId = rows.length + 1;
+    setRows([...rows, { id: newRowId, productName: '', hsnCode: '', quantity: '', rate: '', cgstPercent: '', sgstPercent: '' }]);
+  };
+
+  const deleteRow = (id) => {
+    const updatedRows = rows.filter(row => row.id !== id);
+    setRows(updatedRows);
+  };
+
+  const handleInputChange = (id, field, value) => {
+    const updatedRows = rows.map(row => {
+      if (row.id === id) {
+        return { ...row, [field]: value };
+      }
+      return row;
+    });
+    setRows(updatedRows);
+  };
+
+  // Function to fetch company information from API
+  useEffect(() => {
+    async function fetchCompanyInfo() {
+      try {
+        const response = await axios.get(companyInfo_API); // Adjust endpoint as per your backend API
+        setCompanyInfo(response.data['body-json']);
+      } catch (error) {
+        console.error('Error fetching company information:', error);
+      }
+    }
+
+    fetchCompanyInfo();
+  }, []); // Empty dependency array to fetch data only once when component mounts
+
+  useEffect(() => {
+    async function fetchCustomerInfo() {
+      try {
+        const response = await axios.get(CustomerListForCompany_API); // Adjust endpoint as per your backend API
+        setCustomerInfo(response.data['body-json']['customerInfo']);
+      } catch (error) {
+        console.error('Error fetching customer list information:', error);
+      }
+    }
+
+    fetchCustomerInfo();
+  }, []); // Empty dependency array to fetch data only once when component mounts
+
+
 
   const onNavBarListClick = useCallback(() => {
     navigate("/");
@@ -144,7 +205,7 @@ const AddInvoice2 = () => {
                 <button className={styles.pajamashamburger} onClick={openFrame}>
                   <img className={styles.vectorIcon} alt="" src="/ham.svg" />
                 </button>
-                <h2 className={styles.sriDurgaEngineering}>Add Invoice</h2>
+                <h2 className={styles.sriDurgaEngineering}>Add Invoice Adding page</h2>
               </div>
             </div>
             <main className={styles.form}>
@@ -152,17 +213,16 @@ const AddInvoice2 = () => {
                 <img className={styles.logoIcon} alt="" src="/logo@2x.png" />
                 <div className={styles.nameAddress}>
                   <h1 className={styles.sriDurgaEngineering}>
-                    SRI DURGA ENGINEERING WORKS
+                  {companyInfo.companyName}
                   </h1>
                   <h1 className={styles.plotno14partRajiv}>
-                    Plot.No 14,/Part, Rajiv Gandhi Nagar, Prashanthi Nagar,
-                    Kukatpally, Hyderabad
+                    {companyInfo.companyAddress}
                   </h1>
                 </div>
               </div>
               <div className={styles.gstNumber}>
                 <h2 className={styles.sriDurgaEngineering}>GST:</h2>
-                <h2 className={styles.sriDurgaEngineering}>36AKFPB6929A1ZJ</h2>
+                <h2 className={styles.sriDurgaEngineering}>{companyInfo.gstNo}</h2>
               </div>
               <div className={styles.taxInvoice}>
                 <div className={styles.taxInvoiceTitle}>
@@ -190,6 +250,7 @@ const AddInvoice2 = () => {
                       <b className={styles.invoiceNo}>Invoice date:</b>
                       <div className={styles.selectDateButton}>
                         <DatePicker
+                          format="dd/MM/yyyy"
                           value={selectDateButtonValue}
                           onChange={(newValue) => {
                             setSelectDateButtonValue(newValue);
@@ -227,6 +288,7 @@ const AddInvoice2 = () => {
                     <div className={styles.invoiceNumber}>
                       <b className={styles.invoiceNo}>Reverse charge (Y/N):</b>
                       <div className={styles.reverseChargeDropDown}>
+
                         <div className={styles.invoiceNo}>Choose an option</div>
                         <img
                           className={styles.vectorIcon1}
@@ -239,6 +301,7 @@ const AddInvoice2 = () => {
                       <b className={styles.invoiceNo}>Date of supply:</b>
                       <div className={styles.selectDateButton1}>
                         <DatePicker
+                          format="dd/MM/yyyy"
                           value={selectDateButton1Value}
                           onChange={(newValue) => {
                             setSelectDateButton1Value(newValue);
@@ -316,7 +379,9 @@ const AddInvoice2 = () => {
                       showSearch
                       virtual={false}
                       showArrow={false}
-                    >{` `}</Select>
+                    >
+                      {customerInfo.map(company => (<Option key={company.id} value={company.id}>{company.name}</Option>))}
+                    </Select>
                   </div>
                   <div className={styles.invoiceNumber}>
                     <b className={styles.invoiceNo}>Name:</b>
@@ -400,6 +465,7 @@ const AddInvoice2 = () => {
                       <b className={styles.invoiceNo}>Your DC date:</b>
                       <div className={styles.selectDateButton2}>
                         <DatePicker
+                          format="dd/MM/yyyy"
                           value={selectDateButton2Value}
                           onChange={(newValue) => {
                             setSelectDateButton2Value(newValue);
@@ -440,265 +506,178 @@ const AddInvoice2 = () => {
                   </div>
                 </div>
               </div>
-              <table className={styles.productDetails}>
-                <tbody>
-                  <tr className={styles.tr}>
-                    <td className={styles.td}>
-                      <div className={styles.sno}>
-                        <b className={styles.sno1}>S.No.</b>
-                      </div>
-                    </td>
-                    <td className={styles.td}>
-                      <div className={styles.productDetails1}>
-                        <b className={styles.productDetails2}>
-                          Product details
-                        </b>
-                      </div>
-                    </td>
-                    <td className={styles.td}>
-                      <div className={styles.hsnCode}>
-                        <b className={styles.hsn}>HSN</b>
-                      </div>
-                    </td>
-                    <td className={styles.td}>
-                      <div className={styles.hsnCode}>
-                        <b className={styles.hsn}>Quantity</b>
-                      </div>
-                    </td>
-                    <td className={styles.td}>
-                      <div className={styles.hsnCode}>
-                        <b className={styles.hsn}>Rate</b>
-                      </div>
-                    </td>
-                    <td className={styles.td}>
-                      <div className={styles.hsnCode}>
-                        <b className={styles.productDetails2}>Taxable amount</b>
-                      </div>
-                    </td>
-                    <td className={styles.td}>
-                      <div className={styles.taxableAmount}>
-                        <div className={styles.taxableAmountParent}>
-                          <b className={styles.taxableAmount1}>CGST %</b>
-                          <div className={styles.taxableAmountGroup}>
-                            <b className={styles.taxableAmount2}>%</b>
-                            <b className={styles.taxableAmount3}>Amount</b>
+              <div>
+                <table className={styles.productDetails}>
+                  <thead>
+                    <tr className={styles.tr}>
+                      <th className={styles.td}>
+                        <div className={styles.sno}>
+                          <b className={styles.sno1}>S.No.</b>
+                        </div>
+                      </th>
+                      <th className={styles.td}>
+                        <div className={styles.productDetails1}>
+                          <b className={styles.productDetails2}>
+                            Product details
+                          </b>
+                        </div>
+                      </th>
+                      <th className={styles.td}>
+                        <div className={styles.hsnCode}>
+                          <b className={styles.hsn}>HSN</b>
+                        </div>
+                      </th>
+                      <th className={styles.td}>
+                        <div className={styles.hsnCode}>
+                          <b className={styles.hsn}>Quantity</b>
+                        </div>
+                      </th>
+                      <th className={styles.td}>
+                        <div className={styles.hsnCode}>
+                          <b className={styles.hsn}>Rate</b>
+                        </div>
+                      </th>
+                      <th className={styles.td}>
+                        <div className={styles.hsnCode}>
+                          <b className={styles.productDetails2}>Taxable amount</b>
+                        </div>
+                      </th>
+                      <th className={styles.td}>
+                        <div className={styles.taxableAmount}>
+                          <div className={styles.taxableAmountParent}>
+                            <b className={styles.taxableAmount1}>CGST %</b>
+                            <div className={styles.taxableAmountGroup}>
+                              <b className={styles.taxableAmount2}>%</b>
+                              <b className={styles.taxableAmount3}>Amount</b>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    </td>
-                    <td className={styles.td}>
-                      <div className={styles.taxableAmount4}>
-                        <div className={styles.taxableAmountParent}>
-                          <b className={styles.taxableAmount1}>SGST %</b>
-                          <div className={styles.frameDiv}>
-                            <b className={styles.taxableAmount2}>%</b>
-                            <b className={styles.taxableAmount3}>Amount</b>
+                      </th>
+                      <th className={styles.td}>
+                        <div className={styles.taxableAmount4}>
+                          <div className={styles.taxableAmountParent}>
+                            <b className={styles.taxableAmount1}>SGST %</b>
+                            <div className={styles.frameDiv}>
+                              <b className={styles.taxableAmount2}>%</b>
+                              <b className={styles.taxableAmount3}>Amount</b>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    </td>
-                    <td className={styles.td8}>
-                      <div className={styles.hsnCode}>
-                        <b className={styles.productDetails2}>Amount</b>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr className={styles.tr1}>
-                    <td className={styles.td}>
-                      <div className={styles.sno2}>
-                        <b className={styles.b}>1</b>
-                      </div>
-                    </td>
-                    <td className={styles.td}>
-                      <div className={styles.productDetails3}>
-                        <div className={styles.productDetails4}>
-                          <TextField
-                            className={styles.productName}
-                            color="primary"
-                            placeholder="AEPL/WO/I/574-041"
-                            variant="standard"
-                            sx={{ "& .MuiInputBase-root": { height: "25px" } }}
-                          />
-                          <TextField
-                            className={styles.productName1}
-                            color="primary"
-                            placeholder="Products specification"
-                            variant="standard"
-                            multiline
-                          />
+                      </th>
+                      <th className={styles.td8}>
+                        <div className={styles.hsnCode}>
+                          <b className={styles.productDetails2}>Amount</b>
                         </div>
-                      </div>
-                    </td>
-                    <td className={styles.td}>
-                      <div className={styles.hsnCode1}>
-                        <textarea
-                          className={styles.hsn1}
-                          placeholder="99998"
-                          rows={1}
-                          maxLength={5}
-                          cols={4}
-                        />
-                      </div>
-                    </td>
-                    <td className={styles.td}>
-                      <div className={styles.hsnCode1}>
-                        <textarea
-                          className={styles.hsn1}
-                          placeholder="52"
-                          rows={1}
-                          maxLength={5}
-                          cols={1}
-                        />
-                      </div>
-                    </td>
-                    <td className={styles.td}>
-                      <div className={styles.hsnCode1}>
-                        <textarea
-                          className={styles.hsn1}
-                          placeholder="₹10000000"
-                          rows={1}
-                          maxLength={13}
-                          cols={9}
-                        />
-                      </div>
-                    </td>
-                    <td className={styles.td}>
-                      <div className={styles.rate6}>
-                        <h6 className={styles.h6}>₹50,960</h6>
-                      </div>
-                    </td>
-                    <td className={styles.td}>
-                      <div className={styles.cgst}>
-                        <textarea
-                          className={styles.percent}
-                          placeholder="%"
-                          rows={1}
-                          maxLength={2}
-                          cols={4}
-                        />
-                        <h6 className={styles.h61}>₹3,057.6</h6>
-                      </div>
-                    </td>
-                    <td className={styles.td}>
-                      <div className={styles.cgst}>
-                        <textarea
-                          className={styles.percent1}
-                          placeholder="%"
-                          rows={1}
-                          maxLength={2}
-                          cols={1}
-                        />
-                        <h6 className={styles.h61}>₹3,057.6</h6>
-                      </div>
-                    </td>
-                    <td className={styles.td8}>
-                      <div className={styles.rate6}>
-                        <h6 className={styles.h6}>₹57,075</h6>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr className={styles.tr1}>
-                    <td className={styles.td18}>
-                      <div className={styles.sno2}>
-                        <b className={styles.b}>2</b>
-                      </div>
-                    </td>
-                    <td className={styles.td18}>
-                      <div className={styles.productDetails3}>
-                        <div className={styles.productDetails4}>
-                          <TextField
-                            className={styles.productName}
-                            color="primary"
-                            placeholder="Product Name"
-                            variant="standard"
-                            sx={{ "& .MuiInputBase-root": { height: "25px" } }}
-                          />
-                          <TextField
-                            className={styles.productName1}
-                            color="primary"
-                            placeholder="Product Specification"
-                            variant="standard"
-                            multiline
-                          />
+                      </th>
+                      <th className={styles.td8}>
+                        <div className={styles.hsnCode}>
+                          <b className={styles.productDetails2}>Delete</b>
                         </div>
-                      </div>
-                    </td>
-                    <td className={styles.td18}>
-                      <div className={styles.hsnCode1}>
-                        <textarea
-                          className={styles.hsn1}
-                          placeholder="9955"
-                          rows={1}
-                          maxLength={5}
-                          cols={4}
-                        />
-                      </div>
-                    </td>
-                    <td className={styles.td18}>
-                      <div className={styles.hsnCode1}>
-                        <textarea
-                          className={styles.hsn1}
-                          placeholder="52"
-                          rows={1}
-                          maxLength={5}
-                          cols={1}
-                        />
-                      </div>
-                    </td>
-                    <td className={styles.td18}>
-                      <div className={styles.hsnCode1}>
-                        <textarea
-                          className={styles.hsn1}
-                          placeholder="₹10000000"
-                          rows={1}
-                          maxLength={13}
-                          cols={9}
-                        />
-                      </div>
-                    </td>
-                    <td className={styles.td18}>
-                      <div className={styles.rate6}>
-                        <h6 className={styles.h6}>₹50,960</h6>
-                      </div>
-                    </td>
-                    <td className={styles.td18}>
-                      <div className={styles.cgst}>
-                        <textarea
-                          className={styles.percent}
-                          placeholder="%"
-                          rows={1}
-                          maxLength={2}
-                          cols={4}
-                        />
-                        <h6 className={styles.h61}>₹3,057.6</h6>
-                      </div>
-                    </td>
-                    <td className={styles.td18}>
-                      <div className={styles.cgst}>
-                        <textarea
-                          className={styles.percent1}
-                          placeholder="%"
-                          rows={1}
-                          maxLength={2}
-                          cols={1}
-                        />
-                        <h6 className={styles.h61}>₹3,057.6</h6>
-                      </div>
-                    </td>
-                    <td className={styles.invoiceNo}>
-                      <div className={styles.rate6}>
-                        <b className={styles.b}>₹57,075</b>
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-              <div className={styles.addNewProduct}>
-                <button className={styles.sections}>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {rows.map(row => (
+                      <tr key={row.id}>
+                        <td className={styles.td}>
+                          <div className={styles.sno2}>
+                            <b className={styles.b}>1</b>
+                          </div>
+                        </td>
+                        <td className={styles.td}>
+                          <div className={styles.productDetails3}>
+                            <div className={styles.productDetails4}>
+                              <TextField
+                                className={styles.productName1}
+                                color="primary"
+                                placeholder="Products specification"
+                                variant="standard"
+                                multiline
+                              />
+                            </div>
+                          </div>
+                        </td>
+                        <td className={styles.td}>
+                          <div className={styles.hsnCode1}>
+                            <textarea
+                              className={styles.hsn1}
+                              placeholder="99998"
+                              rows={1}
+                              maxLength={5}
+                              cols={4}
+                            />
+                          </div>
+                        </td>
+                        <td className={styles.td}>
+                          <div className={styles.hsnCode1}>
+                            <textarea
+                              className={styles.hsn1}
+                              placeholder="52"
+                              rows={1}
+                              maxLength={5}
+                              cols={1}
+                            />
+                          </div>
+                        </td>
+                        <td className={styles.td}>
+                          <div className={styles.hsnCode1}>
+                            <textarea
+                              className={styles.hsn1}
+                              placeholder="₹10000000"
+                              rows={1}
+                              maxLength={13}
+                              cols={9}
+                            />
+                          </div>
+                        </td>
+                        <td className={styles.td}>
+                          <div className={styles.rate6}>
+                            <h6 className={styles.h6}>₹50,960</h6>
+                          </div>
+                        </td>
+                        <td className={styles.td}>
+                          <div className={styles.cgst}>
+                            <textarea
+                              className={styles.percent}
+                              placeholder="%"
+                              rows={1}
+                              maxLength={2}
+                              cols={4}
+                            />
+                            <h6 className={styles.h61}>₹3,057.6</h6>
+                          </div>
+                        </td>
+                        <td className={styles.td}>
+                          <div className={styles.cgst}>
+                            <textarea
+                              className={styles.percent1}
+                              placeholder="%"
+                              rows={1}
+                              maxLength={2}
+                              cols={1}
+                            />
+                            <h6 className={styles.h61}>₹3,057.6</h6>
+                          </div>
+                        </td>
+                        <td className={styles.td8}>
+                          <div className={styles.rate6}>
+                            <h6 className={styles.h6}>₹57,075</h6>
+                          </div>
+                        </td>
+                        <td className={styles.td8} style={{textAlign: 'center', }}>
+                          <div style={{cursor:'pointer'}}><DeleteIcon onClick={() => deleteRow(row.id)}></DeleteIcon></div>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+                <div className={styles.addNewProduct}>
+                <button onClick={addRow} className={styles.sections}>
                   <div className={styles.taxableAmount14}>
                     Add new product line +
                   </div>
                 </button>
+              </div>
               </div>
               <div className={styles.summary}>
                 <div className={styles.summary1}>
